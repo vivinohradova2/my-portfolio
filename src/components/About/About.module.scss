@@ -1,0 +1,63 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+.about {
+  background: $backgroundFirst;
+
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: $bottom;
+
+    .text {
+      width: 70%;
+      line-height: 1.5;
+      padding: 20px;
+      box-shadow: 5px 5px 5px 0px $backgroundSecond,
+        inset 4px 4px 15px 0px $backgroundSecond,
+        25px -2px 10px 12px rgba(0, 0, 0, 0);
+      border-radius: 12px;
+    }
+
+    img {
+      border: 1px red solid;
+      width: 150px;
+      height: 200px;
+      margin: 15px;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  .about {
+    padding: $mobile;
+    .container {
+      width: 100%;
+      flex-direction: column-reverse;
+      text-align: justify;
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .about {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  .about {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}

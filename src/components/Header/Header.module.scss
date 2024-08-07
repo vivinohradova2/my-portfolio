@@ -1,0 +1,224 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+header {
+  background-color: $backgroundFirst;
+
+  .container {
+    @include container;
+    padding-bottom: $bottom;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border: 1px red solid;
+      }
+
+      .hamburger {
+        font-size: 34px;
+        color: $hamburger;
+        transition: all 0.4s;
+
+        &:hover {
+          cursor: pointer;
+          color: $hover;
+        }
+
+        &:active {
+          color: $active;
+        }
+      }
+    }
+
+    .menuOpen {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 400px;
+      padding: 70px 0;
+
+      .social {
+        display: flex;
+        justify-content: space-around;
+        width: 77%;
+
+        p {
+          display: flex;
+          transform: rotate(270deg);
+          min-width: 210px;
+          height: 140px;
+          box-shadow: 5px 5px 21px 10px #b3fff2;
+          justify-content: center;
+          align-items: center;
+          font-size: 35px;
+          border-radius: 12px;
+          transition: all 0.4s;
+
+          &:hover {
+            background: $backgroundSecond;
+            color: $backgroundFirst;
+            cursor: pointer;
+            scale: 1.4;
+          }
+        }
+      }
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          list-style: none;
+          padding: 8px;
+          transition: all 0.4s;
+          font-size: 20px;
+
+          &:hover {
+            color: $hover;
+            cursor: pointer;
+            scale: 1.4;
+          }
+
+          &:hover .arrow {
+            opacity: 1;
+          }
+
+          &:active {
+            color: $active;
+          }
+
+          .arrow {
+            opacity: 0;
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+    .menuClose {
+      display: none;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  header {
+    padding: $mobile;
+    .container {
+      width: 100%;
+
+      .menuOpen {
+        padding: 0;
+        height: 300px;
+        .social {
+          flex-direction: column;
+          width: 50%;
+
+          p {
+            min-width: 60px;
+            height: 40px;
+            font-size: 16px;
+            transform: rotate(0);
+            margin: 15px;
+
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+        .menu {
+          width: 50%;
+          li {
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  header {
+    padding: $tablet;
+    .container {
+      width: 100%;
+
+      .menuOpen {
+        padding: 0;
+        height: 300px;
+        .social {
+          flex-direction: column;
+          width: 50%;
+
+          p {
+            min-width: 60px;
+            height: 40px;
+            font-size: 16px;
+            transform: rotate(0);
+            margin: 15px;
+
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+        .menu {
+          width: 50%;
+          li {
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  header {
+    padding: $tablet;
+    .container {
+      width: 100%;
+
+      .menuOpen {
+        padding: 0;
+        height: 300px;
+        .social {
+          width: 50%;
+
+          p {
+            min-width: 184px;
+            height: 130px;
+            margin: 7px;
+            font-size: 30px;
+
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+        .menu {
+          width: 25%;
+          li {
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

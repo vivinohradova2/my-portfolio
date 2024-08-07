@@ -1,0 +1,69 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+.works {
+  background-color: $backgroundFirst;
+  .container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: $bottom;
+
+    .boxWrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      width: 250px;
+      height: 170px;
+      background: url("https://img.freepik.com/free-photo/the-adorable-illustration-of-kittens-playing-in-the-forest-generative-ai_260559-483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721692800&semt=ais_user");
+      box-shadow: 0px 3px 0px 2px $shadow, 0px 6px 0px 4px $shadow,
+        0px 9px 0px 6px $shadow, 0px 12px 0px 8px $shadow,
+        0px 15px 0px 10px $shadow, 0px 18px 0px 12px $shadow,
+        0px 21px 0px 14px $shadow, 0px 24px 0px 16px $shadow,
+        0px 27px 0px 18px $shadow, 0px 30px 0px 20px $shadow,
+        5px 5px 15px 5px $shadow;
+
+      .link {
+        // text-decoration: none;
+        color: black;
+      }
+
+      .text {
+        padding: 10px;
+        background: rgba($color: #f0ebeb, $alpha: 0.5);
+      }
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  .works {
+    padding: $mobile;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .works {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  .works {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}

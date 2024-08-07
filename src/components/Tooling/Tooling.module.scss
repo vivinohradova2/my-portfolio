@@ -1,0 +1,40 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+.tooling {
+  background: $backgroundFirst;
+  .container {
+    @include container;
+    padding-bottom: $bottom;
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  .tooling {
+    padding: $mobile;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .tooling {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  .tooling {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}

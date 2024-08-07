@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+PE:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&family=Playwrite+PE:wght@100..400&display=swap");
+// font-family
+
+$mainFont: "Playwrite DK Uloopet", cursive;
+
+// padding margin
+
+$mobile: 0 15px;
+$tablet: 0 30px;
+$bottom: 50px;
+
+// mixin
+@mixin container {
+  width: 1200px;
+  margin: 0 auto;
+}
