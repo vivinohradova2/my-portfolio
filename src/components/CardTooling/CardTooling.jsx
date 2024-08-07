@@ -17,23 +17,63 @@ import muiImg from "../../assets/images/mui.png";
 import oopImg from "../../assets/images/oop.png";
 
 const data = [
-  { url: reactImg, titles: "React" },
-  { url: jsImg, titles: "JavaScript" },
-  { url: tsImg, titles: "TypeScript" },
-  { url: reduxImg, titles: "Redux" },
-  { url: reduxImg, titles: "ReduxTK" },
-  { url: jestImg, titles: "Jest" },
-  { url: htmlImg, titles: "HTML5" },
-  { url: cssImg, titles: "CSS3" },
-  { url: sassImg, titles: "SASS" },
-  { url: ajaxImg, titles: "AJAX" },
-  { url: restImg, titles: "REST" },
-  { url: unitImg, titles: "Unit test" },
-  { url: gitImg, titles: "Git" },
-  { url: bootstrapImg, titles: "Bootstrap" },
-  { url: bemImg, titles: "BEM" },
-  { url: muiImg, titles: "MUI" },
-  { url: oopImg, titles: "OOP" },
+  { url: reactImg, titles: "React", link: "https://legacy.reactjs.org/" },
+  { url: jsImg, titles: "JavaScript", link: "https://www.w3schools.com/js/" },
+  {
+    url: tsImg,
+    titles: "TypeScript",
+    link: "https://www.typescriptlang.org/docs/",
+  },
+  { url: reduxImg, titles: "Redux", link: "https://redux.js.org/" },
+  { url: reduxImg, titles: "ReduxTK", link: "https://redux-toolkit.js.org/" },
+  {
+    url: jestImg,
+    titles: "Jest",
+    link: "https://jestjs.io/docs/getting-started",
+  },
+  {
+    url: htmlImg,
+    titles: "HTML5",
+    link: "https://www.w3schools.com/html/html_intro.asp",
+  },
+  {
+    url: cssImg,
+    titles: "CSS3",
+    link: "https://www.w3schools.com/html/html_css.asp",
+  },
+  {
+    url: sassImg,
+    titles: "SASS",
+    link: "https://sass-lang.com/documentation/",
+  },
+  {
+    url: ajaxImg,
+    titles: "AJAX",
+    link: "https://www.w3schools.com/xml/ajax_intro.asp",
+  },
+  { url: restImg, titles: "REST", link: "https://uk.wikipedia.org/wiki/REST" },
+  {
+    url: unitImg,
+    titles: "Unit test",
+    link: "https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D0%B5_%D1%82%D0%B5%D1%81%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F",
+  },
+  { url: gitImg, titles: "Git", link: "https://git-scm.com/docs" },
+  {
+    url: bootstrapImg,
+    titles: "Bootstrap",
+    link: "https://getbootstrap.com/docs/4.1/getting-started/introduction/",
+  },
+  { url: bemImg, titles: "BEM", link: "https://en.bem.info/methodology/" },
+  {
+    url: muiImg,
+    titles: "MUI",
+    link: "https://mui.com/material-ui/getting-started/",
+  },
+  {
+    url: oopImg,
+    titles: "OOP",
+    link: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming",
+  },
 ];
 
 const CardTooling = () => {
@@ -43,7 +83,14 @@ const CardTooling = () => {
         {data.map((item, index) => (
           <div key={index} className={styles.card}>
             <img className={styles.icon} src={item.url} alt={item.title} />
-            <p className={styles.text}>{item.titles}</p>
+            <a
+              href={item.link}
+              className={styles.text}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {item.titles}
+            </a>
           </div>
         ))}
       </div>
