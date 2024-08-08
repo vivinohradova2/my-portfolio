@@ -3,6 +3,7 @@
 
 .works {
   background-color: $backgroundFirst;
+
   .container {
     @include container;
     display: flex;
@@ -10,29 +11,32 @@
     align-items: center;
     padding-bottom: $bottom;
 
-    .boxWrap {
+    .wrapCard {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      padding: 15px;
-      width: 250px;
-      height: 170px;
-      background: url("https://img.freepik.com/free-photo/the-adorable-illustration-of-kittens-playing-in-the-forest-generative-ai_260559-483.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721692800&semt=ais_user");
-      box-shadow: 0px 3px 0px 2px $shadow, 0px 6px 0px 4px $shadow,
-        0px 9px 0px 6px $shadow, 0px 12px 0px 8px $shadow,
-        0px 15px 0px 10px $shadow, 0px 18px 0px 12px $shadow,
-        0px 21px 0px 14px $shadow, 0px 24px 0px 16px $shadow,
-        0px 27px 0px 18px $shadow, 0px 30px 0px 20px $shadow,
-        5px 5px 15px 5px $shadow;
+      position: relative;
 
-      .link {
-        // text-decoration: none;
-        color: black;
-      }
+      .carousel {
+        display: flex;
+        width: 100%;
+        justify-content: center;
 
-      .text {
-        padding: 10px;
-        background: rgba($color: #f0ebeb, $alpha: 0.5);
+        .carouselInner {
+          display: flex;
+          transition: transform 0.5s ease;
+          .card {
+            flex: 0 0 25%; /* Размер карточки по умолчанию */
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            cursor: pointer;
+            opacity: 0.5; /* Уменьшенная видимость неактивных карточек */
+            transform: scale(0.9); /* Уменьшение размера неактивных карточек */
+          }
+
+          .card.active {
+            transform: scale(1.2); /* Увеличение центральной карточки */
+            opacity: 1; /* Полная видимость центральной карточки */
+          }
+        }
       }
     }
   }
