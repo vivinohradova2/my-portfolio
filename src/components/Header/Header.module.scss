@@ -47,23 +47,27 @@ header {
         justify-content: space-around;
         width: 77%;
 
-        p {
-          display: flex;
-          transform: rotate(270deg);
-          min-width: 210px;
-          height: 140px;
-          box-shadow: 5px 5px 21px 10px #b3fff2;
-          justify-content: center;
-          align-items: center;
-          font-size: 35px;
-          border-radius: 12px;
-          transition: all 0.4s;
+        a {
+          text-decoration: none;
+          color: black;
+          p {
+            display: flex;
+            transform: rotate(270deg);
+            min-width: 210px;
+            height: 140px;
+            box-shadow: 5px 5px 21px 10px #b3fff2;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            border-radius: 12px;
+            transition: all 0.4s;
 
-          &:hover {
-            background: $backgroundSecond;
-            color: $backgroundFirst;
-            cursor: pointer;
-            scale: 1.4;
+            &:hover {
+              background: $backgroundSecond;
+              color: $backgroundFirst;
+              cursor: pointer;
+              scale: 1.4;
+            }
           }
         }
       }
@@ -122,15 +126,17 @@ header {
           flex-direction: column;
           width: 50%;
 
-          p {
-            min-width: 60px;
-            height: 40px;
-            font-size: 16px;
-            transform: rotate(0);
-            margin: 15px;
+          a {
+            p {
+              min-width: 60px;
+              height: 40px;
+              font-size: 16px;
+              transform: rotate(0);
+              margin: 15px;
 
-            &:hover {
-              scale: 1.1;
+              &:hover {
+                scale: 1.1;
+              }
             }
           }
         }
@@ -161,15 +167,17 @@ header {
           flex-direction: column;
           width: 50%;
 
-          p {
-            min-width: 60px;
-            height: 40px;
-            font-size: 16px;
-            transform: rotate(0);
-            margin: 15px;
+          a {
+            p {
+              min-width: 60px;
+              height: 40px;
+              font-size: 16px;
+              transform: rotate(0);
+              margin: 15px;
 
-            &:hover {
-              scale: 1.1;
+              &:hover {
+                scale: 1.1;
+              }
             }
           }
         }
@@ -199,14 +207,16 @@ header {
         .social {
           width: 50%;
 
-          p {
-            min-width: 184px;
-            height: 130px;
-            margin: 7px;
-            font-size: 30px;
+          a {
+            p {
+              min-width: 184px;
+              height: 130px;
+              margin: 7px;
+              font-size: 30px;
 
-            &:hover {
-              scale: 1.1;
+              &:hover {
+                scale: 1.1;
+              }
             }
           }
         }

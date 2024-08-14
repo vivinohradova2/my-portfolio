@@ -1,0 +1,95 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+.contacts {
+  background-color: $backgroundFirst;
+  .container {
+    @include container;
+    .social {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .tel,
+      .email {
+        text-decoration: none;
+        color: $backgroundSecond;
+        padding-bottom: 10px;
+        transition: all 0.4s;
+
+        &:hover {
+          color: $hover;
+        }
+        &:active {
+          color: $active;
+        }
+      }
+
+      .country {
+        padding-top: 15px;
+      }
+      .social_media {
+        a {
+          svg {
+            font-size: 28px;
+            padding: 5px 10px;
+            margin: 30px 7px;
+            animation: animate 5s linear infinite;
+            transition: all 0.4s;
+
+            &:hover {
+              transform: scale(1.3);
+            }
+          }
+        }
+        .instagram,
+        .telegram,
+        .linkedin {
+          animation-delay: 2s;
+          color: $hover;
+        }
+
+        @keyframes animate {
+          from {
+            filter: hue-rotate(0deg);
+          }
+          to {
+            filter: hue-rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  .contacts {
+    padding: $mobile;
+    .container {
+      width: 100%;
+      flex-direction: column-reverse;
+      text-align: justify;
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .contacts {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  .contacts {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}

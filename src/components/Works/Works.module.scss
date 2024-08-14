@@ -48,6 +48,20 @@
     padding: $mobile;
     .container {
       width: 100%;
+
+      .wrapCard {
+        .carousel {
+          .carouselInner {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .card {
+              width: 100%;
+              padding: 15px 0;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -58,6 +72,20 @@
     padding: $tablet;
     .container {
       width: 100%;
+
+      .wrapCard {
+        .carousel {
+          .carouselInner {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .card {
+              width: 100%;
+              padding: 15px 0;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -68,6 +96,20 @@
     padding: $tablet;
     .container {
       width: 100%;
+
+      .wrapCard {
+        .carousel {
+          .carouselInner {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .card {
+              width: 100%;
+              padding: 15px 0;
+            }
+          }
+        }
+      }
     }
   }
 }

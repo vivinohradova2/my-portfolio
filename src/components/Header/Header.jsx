@@ -23,9 +23,18 @@ const Header = () => {
 
           <div className={` ${isOpen ? styles.menuOpen : styles.menuClose}`}>
             <div className={styles.social}>
-              <p>Linkedin</p>
-              <p>Instagram</p>
-              <p>Telegram</p>
+              <a
+                href="https://www.linkedin.com/in/viktoriia-vynohradova/"
+                target="blank"
+              >
+                <p>Linkedin</p>
+              </a>
+
+              <a href="https://www.instagram.com/frontend_vika/" target="blank">
+                <p>Instagram</p>
+              </a>
+              <a href="https://t.me/vinohradova_frontend" target="blank"><p>Telegram</p></a>
+              
             </div>
 
             <nav className={styles.menu}>
