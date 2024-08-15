@@ -3,6 +3,7 @@
 
 .contacts {
   background-color: $backgroundFirst;
+  padding-bottom: $bottom;
   .container {
     @include container;
     .social {
@@ -33,7 +34,7 @@
           svg {
             font-size: 28px;
             padding: 5px 10px;
-            margin: 30px 7px;
+            margin: 10px 7px;
             animation: animate 5s linear infinite;
             transition: all 0.4s;
 

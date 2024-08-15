@@ -1,0 +1,48 @@
+@import "../../assets/scss/Colors.module.scss";
+@import "../../assets/scss/Fonts.module.scss";
+
+.footer {
+  background: $backgroundSecond;
+  height: 1.5rem;
+  .container {
+    @include container;
+    display: flex;
+    justify-content: center;
+    .text {
+      font-size: 12px;
+      padding: 5px 0;
+    }
+  }
+}
+
+// Mobile
+@media screen and (max-width: 520px) {
+  .footer {
+    padding: $mobile;
+    .container {
+      width: 100%;
+      flex-direction: column-reverse;
+      text-align: justify;
+    }
+  }
+}
+
+//  Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  .footer {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+// Tablet HD
+@media screen and (min-width: 769px) and (max-width: 1350px) {
+  .footer {
+    padding: $tablet;
+    .container {
+      width: 100%;
+    }
+  }
+}
