@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaHamburger } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import styles from "./Header.module.scss";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ const Header = () => {
       <header>
         <div className={styles.container}>
           <div className={styles.top}>
-            <img src="/" alt="icon" />
+            <img src={logo} alt="icon" />
             <nav className={styles.hamburger}>
               <FaHamburger onClick={handleClickHamburger} />
             </nav>
