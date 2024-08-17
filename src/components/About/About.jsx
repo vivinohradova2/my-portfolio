@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./About.module.scss";
+import me from "../../assets/images/me.jpg";
 
 const Main = () => {
   return (
@@ -14,7 +15,7 @@ const Main = () => {
             and maintainable code. I have a deep understanding of web page
             structure.
           </p>
-          <img src="/" alt="myPhoto" />
+          <img src={me} alt="myPhoto" />
         </div>
       </section>
     </>
