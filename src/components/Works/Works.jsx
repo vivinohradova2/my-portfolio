@@ -31,7 +31,7 @@ const Works = () => {
 
   return (
     <>
-      <section className={styles.works}>
+      <section id="works" className={styles.works}>
         <div className={styles.container}>
           <h2>Works</h2>
           <div className={styles.wrapCard}>
