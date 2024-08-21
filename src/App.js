@@ -6,7 +6,6 @@ import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import Works from "./components/Works/Works";
 import Tooling from "./components/Tooling/Tooling";
-import { FaArrowUp } from "react-icons/fa";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
       <Works />
       <Contacts />
       <Footer />
-      <FaArrowUp />
     </>
   );
 }
