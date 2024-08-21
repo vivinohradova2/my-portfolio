@@ -6,15 +6,22 @@ import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0); 
 
   const handleClickHamburger = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleNavClick = (index, sectionId) => {
+    setCurrentIndex(index);
+    document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+    setIsOpen(false)
+  };
+
   return (
     <>
       <header>
-        <div className={styles.container}>
+        <section id="home" className={styles.container}>
           <div className={styles.top}>
             <img src={logo} alt="icon" />
             <nav className={styles.hamburger}>
@@ -35,37 +42,54 @@ const Header = () => {
                 <p>Instagram</p>
               </a>
               <a href="https://t.me/vinohradova_frontend" target="blank"><p>Telegram</p></a>
-              
             </div>
 
             <nav className={styles.menu}>
-              <li>
+              <li
+                className={`${currentIndex === 0 ? styles.active : ""}`}
+                onClick={() => handleNavClick(0, "home")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 Home
               </li>
-              <li>
+              <li
+                className={`${currentIndex === 1 ? styles.active : ""}`}
+                onClick={() => handleNavClick(1, "about")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 About me
               </li>
-              <li>
+              <li
+                className={`${currentIndex === 2 ? styles.active : ""}`}
+                onClick={() => handleNavClick(2, "tooling")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 Tooling
               </li>
-              <li>
+              <li
+                className={`${currentIndex === 3 ? styles.active : ""}`}
+                onClick={() => handleNavClick(3, "works")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 Works
               </li>
-              <li>
+              <li
+                className={`${currentIndex === 4 ? styles.active : ""}`}
+                onClick={() => handleNavClick(4, "contacts")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 Contacts
               </li>
-              <li>
+              <li
+                className={`${currentIndex === 5 ? styles.active : ""}`}
+                onClick={() => handleNavClick(5, "resume")}
+              >
                 <FaArrowRight className={styles.arrow} />
                 Resume
               </li>
             </nav>
           </div>
-        </div>
+        </section>
       </header>
     </>
   );

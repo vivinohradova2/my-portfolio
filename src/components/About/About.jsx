@@ -5,7 +5,7 @@ import me from "../../assets/images/me.jpg";
 const Main = () => {
   return (
     <>
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className={styles.container}>
           <p className={styles.text}>
             I bring designs of any complexity to life by creating responsive and

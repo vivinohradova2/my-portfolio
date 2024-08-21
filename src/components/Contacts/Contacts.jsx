@@ -4,7 +4,7 @@ import { FaLinkedin, FaInstagramSquare, FaTelegram } from "react-icons/fa";
 const Contacts = () => {
   return (
     <>
-      <section className={styles.contacts}>
+      <section id="contacts" className={styles.contacts}>
         <div className={styles.container}>
           <h2>Contact me</h2>
           <div className={styles.social}>
