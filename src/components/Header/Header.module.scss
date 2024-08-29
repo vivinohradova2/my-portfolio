@@ -270,7 +270,7 @@ header {
       }
 
       .mobile {
-        display: flex;
+        display: block;
 
         .menuOpen {
           display: flex;
@@ -372,18 +372,20 @@ header {
         padding: 0;
         height: 300px;
 
-        .social {
-          width: 50%;
+        .desktop {
+          .social {
+            width: 50%;
 
-          a {
-            p {
-              min-width: 184px;
-              height: 130px;
-              margin: 7px;
-              font-size: 30px;
+            a {
+              p {
+                min-width: 184px;
+                height: 130px;
+                margin: 7px;
+                font-size: 30px;
 
-              &:hover {
-                scale: 1.1;
+                &:hover {
+                  scale: 1.1;
+                }
               }
             }
           }
