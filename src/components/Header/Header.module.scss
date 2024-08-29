@@ -34,7 +34,6 @@ header {
       .social {
         display: flex;
         padding: 80px 80px 80px 0;
-        margin-bottom: 100px;
 
         a {
           text-decoration: none;
@@ -44,10 +43,9 @@ header {
             display: flex;
             transform: rotate(270deg);
             min-width: 210px;
-            height: 100%;
+            height: 130px;
             box-shadow: 5px 5px 21px 10px #b3fff2;
-            padding: 10% 20%;
-            margin: 30px;
+            margin: 20px;
             justify-content: center;
             align-items: center;
             font-size: 35px;
@@ -66,6 +64,7 @@ header {
 
       .menu {
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
         align-items: center;
         justify-content: space-around;
