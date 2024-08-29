@@ -22,105 +22,97 @@ header {
         display: none;
       }
     }
-    .mobile {
-      display: none;
 
-      // font-size: 34px;
-      // color: $hamburger;
-      // transition: all 0.4s;
+    .desktop {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(100vh - 190px);
+      padding: 30px 0;
 
-      // &:hover {
-      //   cursor: pointer;
-      //   color: $hover;
-      // }
-
-      // &:active {
-      //   color: $active;
-      // }
-
-      .menuOpen {
+      .social {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 400px;
-        padding: 70px 0;
+        padding: 80px 80px 80px 0;
+        margin-bottom: 100px;
 
-        .social {
-          display: flex;
-          justify-content: space-around;
-          width: 77%;
+        a {
+          text-decoration: none;
+          color: black;
 
-          a {
-            text-decoration: none;
-            color: black;
-
-            p {
-              display: flex;
-              transform: rotate(270deg);
-              min-width: 210px;
-              height: 140px;
-              box-shadow: 5px 5px 21px 10px #b3fff2;
-              justify-content: center;
-              align-items: center;
-              font-size: 35px;
-              border-radius: 12px;
-              transition: all 0.4s;
-
-              &:hover {
-                background: $backgroundSecond;
-                color: $backgroundFirst;
-                cursor: pointer;
-                scale: 1.4;
-              }
-            }
-          }
-        }
-
-        .menu {
-          display: flex;
-          flex-direction: column;
-          width: 20%;
-          align-items: center;
-          justify-content: center;
-
-          li {
-            list-style: none;
-            padding: 8px;
+          p {
+            display: flex;
+            transform: rotate(270deg);
+            min-width: 210px;
+            height: 100%;
+            box-shadow: 5px 5px 21px 10px #b3fff2;
+            padding: 10% 20%;
+            margin: 30px;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            border-radius: 12px;
             transition: all 0.4s;
-            font-size: 20px;
 
             &:hover {
-              color: $hover;
+              background: $backgroundSecond;
+              color: $backgroundFirst;
               cursor: pointer;
               scale: 1.4;
-            }
-
-            &:hover .arrow {
-              opacity: 1;
-            }
-
-            &:active {
-              color: $active;
-            }
-
-            .arrow {
-              opacity: 0;
-              margin-right: 7px;
-            }
-
-            &.active {
-              font-weight: bold;
-              color: $active;
-              scale: 1.4;
-
-              .arrow {
-                opacity: 1;
-              }
             }
           }
         }
       }
 
+      .menu {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+
+        li {
+          list-style: none;
+          padding: 8px;
+          transition: all 0.4s;
+          font-size: 20px;
+
+          &:hover {
+            color: $hover;
+            cursor: pointer;
+            scale: 1.4;
+          }
+
+          &:hover .arrow {
+            opacity: 1;
+          }
+
+          &:active {
+            color: $active;
+          }
+
+          .arrow {
+            opacity: 0;
+            margin-right: 7px;
+          }
+
+          &.active {
+            font-weight: bold;
+            color: $active;
+            scale: 1.4;
+
+            .arrow {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mobile {
+    display: none;
+
+    .menuOpen {
       .menuClose {
         display: none;
       }
@@ -132,12 +124,131 @@ header {
 @media screen and (max-width: 520px) {
   header {
     padding: $mobile;
+
     .container {
       width: 100%;
       position: relative;
 
       .top {
-       
+        .hamburger {
+          display: flex;
+          font-size: 34px;
+          color: $hamburger;
+          transition: all 0.4s;
+
+          &:hover {
+            cursor: pointer;
+            color: $hover;
+          }
+
+          &:active {
+            color: $active;
+          }
+        }
+      }
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+
+        .menuOpen {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0;
+          height: 300px;
+
+          .social {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            a {
+              text-decoration: none;
+              color: black;
+              p {
+                display: flex;
+                min-width: 60px;
+                height: 40px;
+                font-size: 16px;
+                margin: 15px;
+                box-shadow: 5px 5px 21px 10px #b3fff2;
+                justify-content: center;
+                align-items: center;
+                border-radius: 12px;
+                transition: all 0.4s;
+
+                &:hover {
+                  scale: 1.1;
+                  background: $backgroundSecond;
+                  color: $backgroundFirst;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .menu {
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            li {
+              list-style: none;
+              padding: 8px;
+              transition: all 0.4s;
+              font-size: 20px;
+
+              &:hover {
+                color: $hover;
+                cursor: pointer;
+                scale: 1.1;
+              }
+              &:hover .arrow {
+                opacity: 1;
+              }
+
+              &:active {
+                color: $active;
+              }
+
+              .arrow {
+                opacity: 0;
+                margin-right: 7px;
+              }
+
+              &.active {
+                font-weight: bold;
+                color: $active;
+                scale: 1.4;
+
+                .arrow {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        .menuClose {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Tablet SD
+@media screen and (min-width: 521px) and (max-width: 768px) {
+  header {
+    padding: $tablet;
+
+    .container {
+      width: 100%;
+
+      .top {
         .hamburger {
           display: flex;
           font-size: 34px;
@@ -155,86 +266,95 @@ header {
         }
       }
 
+      .desktop {
+        display: none;
+      }
+
       .mobile {
-        display: block;
+        display: flex;
 
         .menuOpen {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           padding: 0;
           height: 300px;
 
           .social {
+            display: flex;
             flex-direction: column;
             width: 50%;
 
             a {
+              text-decoration: none;
+              color: black;
               p {
+                display: flex;
                 min-width: 60px;
                 height: 40px;
                 font-size: 16px;
-                transform: rotate(0);
                 margin: 15px;
+                box-shadow: 5px 5px 21px 10px #b3fff2;
+                justify-content: center;
+                align-items: center;
+                border-radius: 12px;
+                transition: all 0.4s;
 
                 &:hover {
                   scale: 1.1;
+                  background: $backgroundSecond;
+                  color: $backgroundFirst;
+                  cursor: pointer;
                 }
               }
             }
           }
 
           .menu {
+            display: flex;
             width: 50%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
 
             li {
+              list-style: none;
+              padding: 8px;
+              transition: all 0.4s;
+              font-size: 20px;
+
               &:hover {
+                color: $hover;
+                cursor: pointer;
                 scale: 1.1;
+              }
+              &:hover .arrow {
+                opacity: 1;
+              }
+
+              &:active {
+                color: $active;
+              }
+
+              .arrow {
+                opacity: 0;
+                margin-right: 7px;
+              }
+
+              &.active {
+                font-weight: bold;
+                color: $active;
+                scale: 1.4;
+
+                .arrow {
+                  opacity: 1;
+                }
               }
             }
           }
         }
-      }
-    }
-  }
-}
-
-// Tablet SD
-@media screen and (min-width: 521px) and (max-width: 768px) {
-  header {
-    padding: $tablet;
-
-    .container {
-      width: 100%;
-
-      .menuOpen {
-        padding: 0;
-        height: 300px;
-
-        .social {
-          flex-direction: column;
-          width: 50%;
-
-          a {
-            p {
-              min-width: 60px;
-              height: 40px;
-              font-size: 16px;
-              transform: rotate(0);
-              margin: 15px;
-
-              &:hover {
-                scale: 1.1;
-              }
-            }
-          }
-        }
-
-        .menu {
-          width: 50%;
-
-          li {
-            &:hover {
-              scale: 1.1;
-            }
-          }
+        .menuClose {
+          display: none;
         }
       }
     }
