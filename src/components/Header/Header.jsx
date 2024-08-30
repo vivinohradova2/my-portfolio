@@ -17,6 +17,19 @@ const Header = () => {
     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
   };
+//   const handleNavClick = (index, sectionId) => {
+//     setCurrentIndex(index);
+//     setIsOpen(false);
+
+//     // Прокручиваем к элементу
+//     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+
+//     // Добавляем небольшую задержку, чтобы дождаться завершения scrollIntoView
+//     setTimeout(() => {
+//         // Корректируем положение прокрутки на 100px выше
+//         window.scrollBy(0, -90);
+//     }, 500); // Установите время задержки в зависимости от времени выполнения scrollIntoView
+// };
 
   return (
     <>

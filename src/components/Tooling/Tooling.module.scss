@@ -6,6 +6,8 @@
   .container {
     @include container;
     padding-bottom: $bottom;
+    padding-top: 50px;
+    // height: 100vh;
   }
 }
 
@@ -15,6 +17,7 @@
     padding: $mobile;
     .container {
       width: 100%;
+      height: 50vh;
     }
   }
 }
@@ -35,6 +38,7 @@
     padding: $tablet;
     .container {
       width: 100%;
+
     }
   }
 }
