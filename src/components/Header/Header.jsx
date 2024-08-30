@@ -12,10 +12,27 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  // const handleNavClick = (index, sectionId) => {
+  //   setCurrentIndex(index);
+  //   document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  //   setIsOpen(false);
+  // };
+
   const handleNavClick = (index, sectionId) => {
     setCurrentIndex(index);
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+
+    if (window.innerWidth >= 521 && window.innerWidth <= 768) {
+      setTimeout(() => {
+        window.scrollBy(0, -50);
+      }, 500);
+    } else if (window.innerWidth < 521) {
+      setTimeout(() => {
+        window.scrollBy(0, -40);
+      }, 500);
+    }
   };
 
   return (
