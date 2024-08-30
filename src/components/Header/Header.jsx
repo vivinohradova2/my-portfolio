@@ -12,24 +12,28 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
 
+  // const handleNavClick = (index, sectionId) => {
+  //   setCurrentIndex(index);
+  //   document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  //   setIsOpen(false);
+  // };
+
   const handleNavClick = (index, sectionId) => {
     setCurrentIndex(index);
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
+
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+
+    if (window.innerWidth >= 521 && window.innerWidth <= 768) {
+      setTimeout(() => {
+        window.scrollBy(0, -50);
+      }, 500);
+    } else if (window.innerWidth < 521) {
+      setTimeout(() => {
+        window.scrollBy(0, -40);
+      }, 500);
+    }
   };
-//   const handleNavClick = (index, sectionId) => {
-//     setCurrentIndex(index);
-//     setIsOpen(false);
-
-//     // Прокручиваем к элементу
-//     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
-
-//     // Добавляем небольшую задержку, чтобы дождаться завершения scrollIntoView
-//     setTimeout(() => {
-//         // Корректируем положение прокрутки на 100px выше
-//         window.scrollBy(0, -90);
-//     }, 500); // Установите время задержки в зависимости от времени выполнения scrollIntoView
-// };
 
   return (
     <>
