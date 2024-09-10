@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaHamburger } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaHamburger, FaArrowRight } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
 import styles from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
 
@@ -11,12 +11,6 @@ const Header = () => {
   const handleClickHamburger = () => {
     setIsOpen(!isOpen);
   };
-
-  // const handleNavClick = (index, sectionId) => {
-  //   setCurrentIndex(index);
-  //   document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
-  //   setIsOpen(false);
-  // };
 
   const handleNavClick = (index, sectionId) => {
     setCurrentIndex(index);
@@ -43,8 +37,13 @@ const Header = () => {
             <img src={logo} alt="icon" />
 
             <nav className={styles.hamburger}>
-              <FaHamburger onClick={handleClickHamburger} />
+              {isOpen ? (
+                <RxCross1 onClick={handleClickHamburger} />
+              ) : (
+                <FaHamburger onClick={handleClickHamburger} />
+              )}
             </nav>
+           
           </div>
           {/* Mobile */}
           <div className={styles.mobile}>
