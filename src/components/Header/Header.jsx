@@ -3,6 +3,8 @@ import { FaHamburger, FaArrowRight } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import styles from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
+import resume from "../../assets/docs/resume.pdf";
+
 
 const sections = [
   { id: "home", label: "Home" },
@@ -10,7 +12,7 @@ const sections = [
   { id: "tooling", label: "Tooling" },
   { id: "works", label: "Works" },
   { id: "contacts", label: "Contacts" },
-  { id: "resume", label: "Resume" },
+ 
 ];
 
 const Header = () => {
@@ -103,6 +105,7 @@ const Header = () => {
                     {section.label}
                   </li>
                 ))}
+                <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
               </nav>
             </div>
           </div>
@@ -133,6 +136,7 @@ const Header = () => {
                   {section.label}
                 </li>
               ))}
+              <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
             </nav>
           </div>
         </section>
