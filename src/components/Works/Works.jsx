@@ -1,8 +1,6 @@
 import { useState } from "react";
 import CardWorks from "../CardWorks/CardWorks";
 import styles from "./Works.module.scss";
-import todolist from "../../assets/images/todolist.png";
-import popcorn from "../../assets/images/popcorn.png";
 
 const Works = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -13,19 +11,20 @@ const Works = () => {
 
   const cardData = [
     {
-      background: popcorn,
-      title: "Title 1",
-      text: "Text 1",
+      url: "https://iryna-derhachova.website/?fbclid=PAZXh0bgNhZW0CMTEAAaZb5ArDvMaesYdlSGi7nl9ydq-y_HXB1XIVULcl2sNjZIjP_E7qy9jYaAg_aem__iYCpX_L4nMyLRL9nfkp3A",
+      title: "Business card",
+      text: "Business card website for a translator",
+    },
+
+    {
+      url: "https://vivinohradova.github.io/travel-list/",
+      title: "Far away",
+      text: "A site for making a travel packing list. There are sorting, adding and deleting functions",
     },
     {
-      background: todolist,
-      title: "Title 2",
-      text: "Text 2",
-    },
-    {
-      background: "path/to/background3.jpg",
-      title: "Title 3",
-      text: "Text 3",
+      url: "https://github.com/vivinohradova/use_popcorn/tree/main/src/components",
+      title: "usePopcorn",
+      text: "A site for searching, adding and saving a list of favorite films",
     },
   ];
 
@@ -46,9 +45,9 @@ const Works = () => {
                     onClick={() => handleCardClick(index)}
                   >
                     <CardWorks
-                      background={card.background}
                       title={card.title}
                       text={card.text}
+                      url={card.url}
                     />
                   </div>
                 ))}

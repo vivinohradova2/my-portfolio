@@ -1,13 +1,17 @@
 import styles from "./CardWorks.module.scss";
 
-const CardWorks = ({ background, title, text }) => {
+const CardWorks = ({ title, text, url }) => {
   return (
     <>
       <div
         className={styles.boxWrap}
-        style={{ backgroundImage: `url(${background})` }}
       >
-        <a className={styles.link} href="/">
+        <a
+          className={styles.link}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {title}
         </a>
         <p className={styles.text}>{text}</p>
