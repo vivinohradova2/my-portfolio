@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaHamburger, FaArrowRight } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import styles from "./Header.module.scss";
 import logo from "../../assets/images/logo.png";
+import resume from "../../assets/docs/resume.pdf";
+
+
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About me" },
+  { id: "tooling", label: "Tooling" },
+  { id: "works", label: "Works" },
+  { id: "contacts", label: "Contacts" },
+ 
+];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,16 +29,38 @@ const Header = () => {
 
     document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
 
-    if (window.innerWidth >= 521 && window.innerWidth <= 768) {
-      setTimeout(() => {
-        window.scrollBy(0, -50);
-      }, 500);
-    } else if (window.innerWidth < 521) {
-      setTimeout(() => {
-        window.scrollBy(0, -40);
-      }, 500);
-    }
+    const offset = window.innerWidth < 521 ? -40 : window.innerWidth <= 768 ? -50 : 0;
+    setTimeout(() => {
+      window.scrollBy(0, offset);
+    }, 500);
   };
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY + 100; // Смещение для точности
+    let foundIndex = 0;
+
+    sections.forEach((section, index) => {
+      const sectionElement = document.getElementById(section.id);
+      if (sectionElement) {
+        const offsetTop = sectionElement.offsetTop;
+        const offsetBottom = offsetTop + sectionElement.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          foundIndex = index;
+        }
+      }
+    });
+
+    setCurrentIndex(foundIndex);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -43,23 +76,17 @@ const Header = () => {
                 <FaHamburger onClick={handleClickHamburger} />
               )}
             </nav>
-           
           </div>
+
           {/* Mobile */}
           <div className={styles.mobile}>
             <div className={` ${isOpen ? styles.menuOpen : styles.menuClose}`}>
               <div className={styles.social}>
-                <a
-                  href="https://www.linkedin.com/in/viktoriia-vynohradova/"
-                  target="blank"
-                >
+                <a href="https://www.linkedin.com/in/viktoriia-vynohradova/" target="blank">
                   <p>Linkedin</p>
                 </a>
 
-                <a
-                  href="https://www.instagram.com/frontend_vika/"
-                  target="blank"
-                >
+                <a href="https://www.instagram.com/frontend_vika/" target="blank">
                   <p>Instagram</p>
                 </a>
                 <a href="https://t.me/vinohradova_frontend" target="blank">
@@ -68,48 +95,17 @@ const Header = () => {
               </div>
 
               <nav className={styles.menu}>
-                <li
-                  className={`${currentIndex === 0 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(0, "home")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  Home
-                </li>
-                <li
-                  className={`${currentIndex === 1 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(1, "about")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  About me
-                </li>
-                <li
-                  className={`${currentIndex === 2 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(2, "tooling")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  Tooling
-                </li>
-                <li
-                  className={`${currentIndex === 3 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(3, "works")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  Works
-                </li>
-                <li
-                  className={`${currentIndex === 4 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(4, "contacts")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  Contacts
-                </li>
-                <li
-                  className={`${currentIndex === 5 ? styles.active : ""}`}
-                  onClick={() => handleNavClick(5, "resume")}
-                >
-                  <FaArrowRight className={styles.arrow} />
-                  Resume
-                </li>
+                {sections.map((section, index) => (
+                  <li
+                    key={section.id}
+                    className={`${currentIndex === index ? styles.active : ""}`}
+                    onClick={() => handleNavClick(index, section.id)}
+                  >
+                    <FaArrowRight className={styles.arrow} />
+                    {section.label}
+                  </li>
+                ))}
+                <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
               </nav>
             </div>
           </div>
@@ -117,10 +113,7 @@ const Header = () => {
           {/* Desktop */}
           <div className={styles.desktop}>
             <div className={styles.social}>
-              <a
-                href="https://www.linkedin.com/in/viktoriia-vynohradova/"
-                target="blank"
-              >
+              <a href="https://www.linkedin.com/in/viktoriia-vynohradova/" target="blank">
                 <p>Linkedin</p>
               </a>
 
@@ -133,48 +126,17 @@ const Header = () => {
             </div>
 
             <nav className={styles.menu}>
-              <li
-                className={`${currentIndex === 0 ? styles.active : ""}`}
-                onClick={() => handleNavClick(0, "home")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                Home
-              </li>
-              <li
-                className={`${currentIndex === 1 ? styles.active : ""}`}
-                onClick={() => handleNavClick(1, "about")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                About me
-              </li>
-              <li
-                className={`${currentIndex === 2 ? styles.active : ""}`}
-                onClick={() => handleNavClick(2, "tooling")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                Tooling
-              </li>
-              <li
-                className={`${currentIndex === 3 ? styles.active : ""}`}
-                onClick={() => handleNavClick(3, "works")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                Works
-              </li>
-              <li
-                className={`${currentIndex === 4 ? styles.active : ""}`}
-                onClick={() => handleNavClick(4, "contacts")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                Contacts
-              </li>
-              <li
-                className={`${currentIndex === 5 ? styles.active : ""}`}
-                onClick={() => handleNavClick(5, "resume")}
-              >
-                <FaArrowRight className={styles.arrow} />
-                Resume
-              </li>
+              {sections.map((section, index) => (
+                <li
+                  key={section.id}
+                  className={`${currentIndex === index ? styles.active : ""}`}
+                  onClick={() => handleNavClick(index, section.id)}
+                >
+                  <FaArrowRight className={styles.arrow} />
+                  {section.label}
+                </li>
+              ))}
+              <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
             </nav>
           </div>
         </section>

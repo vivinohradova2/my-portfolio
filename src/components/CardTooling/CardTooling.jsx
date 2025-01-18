@@ -15,6 +15,9 @@ import bootstrapImg from "../../assets/images/bootstrap.png";
 import bemImg from "../../assets/images/bem.png";
 import muiImg from "../../assets/images/mui.png";
 import oopImg from "../../assets/images/oop.png";
+import vite from '../../assets/images/vite.png';
+import tailwindcss from '../../assets/images/tailwind.png';
+import zustand from '../../assets/images/zustand.png';
 
 const data = [
   { url: reactImg, titles: "React", link: "https://legacy.reactjs.org/" },
@@ -73,6 +76,21 @@ const data = [
     url: oopImg,
     titles: "OOP",
     link: "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_programming",
+  },
+  {
+    url: vite,
+    titles: "Vite",
+    link: "https://vite.dev/",
+  },
+  {
+    url: tailwindcss,
+    titles: "Tailwindcss",
+    link: "https://tailwindcss.com/docs/guides/vite",
+  },
+  {
+    url: zustand,
+    titles: "Zustand",
+    link: "https://zustand.docs.pmnd.rs/getting-started/introduction",
   },
 ];
 
