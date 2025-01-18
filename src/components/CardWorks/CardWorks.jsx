@@ -1,16 +1,19 @@
 import styles from "./CardWorks.module.scss";
 
-const CardWorks = ({ title, text, url }) => {
+const CardWorks = ({ title, text, url, isActive }) => {
   return (
     <>
-      <div
-        className={styles.boxWrap}
-      >
+      <div className={styles.boxWrap}>
         <a
-          className={styles.link}
-          href={url}
-          target="_blank"
+          className={`${styles.link} ${!isActive ? styles.disabled : ""}`}
+          href={isActive ? url : "#"}
+          target={isActive ? "_blank" : "_self"}
           rel="noopener noreferrer"
+          onClick={(e) => {
+            if (!isActive) {
+              e.preventDefault();
+            }
+          }}
         >
           {title}
         </a>

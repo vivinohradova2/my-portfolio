@@ -22,6 +22,11 @@ const Works = () => {
       text: "A site for making a travel packing list. There are sorting, adding and deleting functions",
     },
     {
+      url: "https://vivinohradova.github.io/memory-flip-kid/",
+      title: "Memory flip",
+      text: "This is a simple and fun memory game for kids! Players need to remember the locations of the cards with images and find matching pairs.",
+    },
+    {
       url: "https://github.com/vivinohradova/use_popcorn/tree/main/src/components",
       title: "usePopcorn",
       text: "A site for searching, adding and saving a list of favorite films",
@@ -48,6 +53,7 @@ const Works = () => {
                       title={card.title}
                       text={card.text}
                       url={card.url}
+                      isActive={index === currentIndex}
                     />
                   </div>
                 ))}
