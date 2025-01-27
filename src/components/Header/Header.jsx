@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   const handleScroll = () => {
-    const scrollPosition = window.scrollY + 100; // Смещение для точности
+    const scrollPosition = window.scrollY + 100; 
     let foundIndex = 0;
 
     sections.forEach((section, index) => {
@@ -105,7 +105,7 @@ const Header = () => {
                     {section.label}
                   </li>
                 ))}
-                <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
+                {/* <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a> */}
               </nav>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Header = () => {
                   {section.label}
                 </li>
               ))}
-              <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a>
+              {/* <a href={resume} download='CV_Viktoriia_Vynohradova_Front_end_developer .pdf'>Resume</a> */}
             </nav>
           </div>
         </section>
