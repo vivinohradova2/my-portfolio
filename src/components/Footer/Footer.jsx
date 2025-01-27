@@ -22,10 +22,8 @@ const toggleVisibility = () => {
 };
 
 useEffect(() => {
-  // Добавляем слушатель события при монтировании компонента
   window.addEventListener("scroll", toggleVisibility);
 
-  // Убираем слушатель события при размонтировании компонента
   return () => {
     window.removeEventListener("scroll", toggleVisibility);
   };
@@ -35,7 +33,7 @@ useEffect(() => {
     <>
       <footer className={styles.footer}>
         <div className={styles.container}>
-          <p className={styles.text}>&copy; 2024 Vynohradova Viktoriia</p>
+          <p className={styles.text}>&copy; {new Date().getFullYear()} Vynohradova Viktoriia</p>
           {isVisible && (
             <FaArrowUp className={styles.arrow} onClick={scrollToTop} />
           )}
